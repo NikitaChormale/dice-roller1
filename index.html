@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+         body{
+            background-color: #D9AFD9;
+background-image: linear-gradient(5deg, #D9AFD9 100%, #97D9E1 100%);
+min-height: 100vh;
+        }
+        .dice-img{
+            width: 200px;
+            height: 200px;
+            margin: 10px auto;
+            display: block;
+
+        }
+        .app-title{
+            text-align: center;
+        }
+        .btn-dice{
+            width: 200px;
+            display: block;
+            font-size: 25px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #dd1bdd;
+            color:white;
+            cursor: pointer;
+
+
+        }
+    </style>
+</head>
+<body>
+    <h2 class="app-title">Roll The Dice</h2>
+    <img src="./default.jpg" class="dice-img" id="dice-img"/>
+    <button class="btn-dice" onclick="roll()">Roll Dice</button>
+    <script>
+        function roll(){
+        const min=1;
+        const max=6;
+        const randomNumber=Math.round(Math.random()*(max-min))+min;
+        console.log(randomNumber);
+        const imgElement=document.getElementById(`dice-img`);
+      switch(randomNumber){
+        case 1:
+            imgElement.src=`one-dice.jpg`;
+            break;
+            case 2:
+                imgElement.src=`two-dice-jpg`;
+                break;
+                case 3:
+                    imgElement.src=`three.jpg`;
+                    break;
+                    case 4:
+                        imgElement.src=`four-dice.jpg`
+                        break;
+                        case 5:
+                            imgElement.src=`five-dice.jpg`;
+                            break;
+                            case 6:
+                            imgElement.src=`default.jpg`;
+                            break;
+      }
+    
+    }
+        </script>
+</body>
+</html>
